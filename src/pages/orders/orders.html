@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Mis pedidos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let product of products; let i = index; ">
+        <ion-item>
+            <ion-checkbox [(ngModel)]="product.done" (click)="done(i, !product.done)"></ion-checkbox>
+            <ion-label>{{product.name}}</ion-label>
+            <ion-badge item-right>{{product.amount}}</ion-badge>
+        </ion-item>
+        <ion-item-options>
+            <button ion-button color="danger" (click)="delete(i)">
+                <ion-icon name="trash"></ion-icon>
+                Eliminar
+            </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,134 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #387ef5,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B,
+  success:    #32db64,
+  warning:    #f0ff5e,
+  error:      #f53d3d
+);
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color:        color($colors, dark);
+$headings-font-weight: 300;
+
+$text-input-highlight-color-valid:         color($colors, success);
+$text-input-highlight-color-invalid:       color($colors, error);
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+// Toolbar
+$toolbar-ios-background:                   color($colors, dark);
+$toolbar-ios-active-color:                 color($colors, dark);
+$toolbar-ios-inactive-color:               color($colors, light);
+
+// Tabs
+$tabs-ios-background:                      color($colors, dark);
+$tabs-ios-tab-color-active:                color($colors, primary);
+$tabs-ios-tab-color:                       color($colors, light);  
+$tabs-ios-tab-min-height: 49px;
+$tabs-ios-tab-padding: 0 2px;
+$tabs-ios-tab-font-size: 10px;
+
+// Toast
+$toast-ios-background:                     color($colors, primary);
+
+// Inputs
+$text-input-ios-show-valid-highlight:      true;
+$text-input-ios-show-invalid-highlight:    true;
+
+// Change the color of the segment button text
+$segment-button-ios-text-color-activated:  color($colors, dark);
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+// Toolbar
+$toolbar-md-background:                   color($colors, dark);
+$toolbar-md-active-color:                 color($colors, dark);
+$toolbar-md-inactive-color:               color($colors, light);
+
+// Tabs
+$tabs-md-background:                      color($colors, dark);
+$tabs-md-tab-color-active:                color($colors, primary);
+$tabs-md-tab-color:                       color($colors, light);
+$tabs-md-tab-min-height: 49px;
+$tabs-md-tab-padding: 0 0px 0px 0;
+$tabs-md-tab-padding-active: 0 0px 0px 0;
+$tabs-md-tab-text-margin: 0px 0;
+$tabs-md-tab-text-margin-active: 0px 0;
+$tabs-md-tab-font-size: 10px;
+$tabs-md-tab-font-size-active: 10px;
+
+// Toast
+$toast-md-background:                     color($colors, primary);
+
+// Change the color of the segment button text
+$segment-button-md-text-color-activated:  color($colors, dark);
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+// Toolbar
+$toolbar-wp-background:                   color($colors, dark);
+$toolbar-wp-active-color:                 color($colors, dark);
+$toolbar-wp-inactive-color:               color($colors, light);
+
+// Tabs
+$tabs-wp-background:                      color($colors, dark);
+$tabs-wp-tab-color-active:                color($colors, primary);
+$tabs-wp-tab-color:                       color($colors, light);  
+$tabs-wp-tab-min-height: 49px;
+$tabs-wp-tab-padding: 0 2px 0px 0;
+$tabs-wp-tab-font-size: 10px;
+$tabs-wp-tab-font-size-active: 10px;
+
+// Toast
+$toast-wp-background:                     color($colors, primary);
+
+// Change the color of the segment button text
+$segment-button-wp-text-color-activated:  color($colors, dark);
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";

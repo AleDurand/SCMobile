@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Nuevo item
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button [disabled]="!productForm.valid" (click)="save(productForm.value)">
+            <ion-icon name="checkmark"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content class="add">
+    <form [formGroup]="productForm">
+        <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Cantidad</ion-label>
+            <ion-input type="number" formControlName="amount"></ion-input>
+        </ion-item>
+    </form>
+</ion-content>
