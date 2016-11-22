@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Validators, FormBuilder } from '@angular/forms';
 
-export class Product {
+import { OrderService } from '../../../services/order.service';
+
+export class Order {
   name: string;
   amount: number;
   done: boolean;
@@ -11,29 +13,24 @@ export class Product {
 
 @Component({
   selector: 'page-add-order',
-  templateUrl: 'add-order.html'
+  templateUrl: 'add-order.html',
+  providers: [OrderService]
 })
 export class AddOrderPage {
 
-  public products: Array<Product>;
-  public productForm;
+  public orderForm;
 
-  constructor(public navCtrl: NavController, private formBuilder: FormBuilder) {
-    this.products = JSON.parse(localStorage.getItem("products"));
-    if(!this.products) {
-      this.products = [];
-    }
-    this.productForm = formBuilder.group({  
+  constructor(public navCtrl: NavController, private formBuilder: FormBuilder, private orderService: OrderService) {
+    this.orderForm = formBuilder.group({  
       'name': ['', Validators.compose([Validators.required])],
       'amount': ['', Validators.compose([Validators.required])]
     });
   }
 
-  save(product : Product) {
-    if(this.productForm.valid) {
-      product.done = false;
-      this.products.push(product);
-      localStorage.setItem("products", JSON.stringify(this.products));
+  save(order : Order) {
+    if(this.orderForm.valid) {
+      order.done = false;
+      this.orderService.add(order);
       this.navCtrl.pop();
     }
   }
