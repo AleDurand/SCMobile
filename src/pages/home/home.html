@@ -3,35 +3,82 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Inicio</ion-title>
+    <ion-title>La Coope</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-slides pager loop="false" autoplay="false" index="1">
-      <ion-slide padding>
-          <img src="assets/images/house.svg"/>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            <strong>Etiam tempus orci mollis sapien laoreet vestibulum. </strong>
-            Vivamus in tellus ut ligula scelerisque blandit sed id augue. Aenean suscipit velit facilisis commodo.
-          </p>
-      </ion-slide>
-      <ion-slide padding>
-          <img src="assets/images/brokers.svg"/>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            <strong>Etiam tempus orci mollis sapien laoreet vestibulum. </strong>
-            Vivamus in tellus ut ligula scelerisque blandit sed id augue. Aenean suscipit velit facilisis commodo.
-          </p>
-      </ion-slide>
-      <ion-slide padding>
-          <img src="assets/images/favorites.svg"/>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            <strong>Etiam tempus orci mollis sapien laoreet vestibulum. </strong>
-            Vivamus in tellus ut ligula scelerisque blandit sed id augue. Aenean suscipit velit facilisis commodo.
-          </p>
-      </ion-slide>
-    </ion-slides>
+<ion-content style="background: #F5F5F5">
+
+  <div class="portada">
+    <!-- <img src="assets/images/final-de-la-jornada.jpg"/> -->
+  </div>
+  <!-- <ion-slides style="height: 40%;" [options]="{ autoplay:5000, loop:true , direction:'horizontal', speed:1000}" >
+    <ion-slide >
+      <img src="assets/images/final-de-la-jornada.jpg"/>
+    </ion-slide >
+    <ion-slide >
+      <img src="assets/images/zapala1.jpg"/>
+    </ion-slide>
+     <ion-slide >
+      <img src="assets/images/logo-col.resized.jpg"/>
+    </ion-slide>
+  </ion-slides> -->
+
+  <!-- <ion-row style="">
+    <ion-col width-50>
+      <button ion-button full icon-left>
+        <ion-icon name="home"></ion-icon>
+        Ofertas
+      </button>
+      <button ion-button full icon-left>
+        <ion-icon name="cart"></ion-icon>
+        Pedidos
+      </button>  
+    </ion-col>
+    <ion-col width-50>
+      <button ion-button full icon-right>
+        Sucursales
+        <ion-icon name="pin"></ion-icon>
+      </button>  
+      <button ion-button full icon-right>
+        Folletos
+        <ion-icon name="map"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-list class="listaBotones">
+    <button ion-button full icon-right class="boton">
+      <ion-icon name="home"></ion-icon>
+      Ofertas
+    </button>
+    <button ion-button full icon-right class="boton">
+      <ion-icon name="cart"></ion-icon>
+      Pedidos
+    </button>
+    <button ion-button full icon-right class="boton">
+      <ion-icon name="pin"></ion-icon>
+      Mi Lista
+    </button>
+    <button ion-button full icon-right class="boton">
+      <ion-icon name="map"></ion-icon>
+      Folleto
+    </button>
+  </ion-list>
+
+  <ion-card class="padding" style="border:2px; padding: 0 8px;">
+    <ion-card-content>
+      <h6 style="text-align: center;">Sucursales</h6>
+      <img src="assets/images/map.jpg"/>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="padding" style="border:2px; padding: 0 8px;">
+    <ion-card-content>
+      <h6 style="text-align: center;">Descuentazo</h6>
+      <img src="assets/images/descuentazo.jpg"/>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

@@ -4,21 +4,31 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Ofertas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
-        <ion-item *ngFor="let offer of offers">
-            <ion-thumbnail item-left>
-                <img [src]="offer.image">
-            </ion-thumbnail>
-            <h2>{{offer.description}}</h2>
-            <p>$ {{offer.price | currency:'ARS'}}</p>
-            <button clear item-right (click)="getById(offer.id)">Ver</button>
-        </ion-item>
-    </ion-list>
-</ion-content>
+<ion-content class="card-bg content-ios statusbar-padding">
+  <h4 style="text-align: center;">Ofertas</h4>
+    <ion-item *ngFor= "let item of items" text-wrap height-50>
+      <ion-card class="padding" style="border:2px; padding: 0 8px;">
+        <ion-card-content>
+          <h5>{{item.description}}</h5>
+          <img [src]="item.image"/>
+          <p>
+            {{item.description}}
+          <p>
+          <p class="precio">${{item.price}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content>
+     loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+   </ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+
+
+</ion-content>
