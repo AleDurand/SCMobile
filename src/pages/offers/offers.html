@@ -14,7 +14,7 @@
     <ion-row wrap>
       <ion-col width-50 *ngFor= "let item of items; let i = index;">
         <ion-card> 
-          <img [src]="item.image" width="100%"/>
+          <img [src]="item.image" onError="this.src='assets/images/default.png'" />
           <ion-card-content>
             <p class="truncate">{{item.description}}</p>
           </ion-card-content>

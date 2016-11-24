@@ -9,9 +9,9 @@
 
 <ion-content style="background: #F5F5F5">
 
-  <div class="portada">
-    <!-- <img src="assets/images/final-de-la-jornada.jpg"/> -->
-  </div>
+  <ion-card class="my-card">
+    <img src="assets/images/final-de-la-jornada.jpg"/>
+  </ion-card>
   <!-- <ion-slides style="height: 40%;" [options]="{ autoplay:5000, loop:true , direction:'horizontal', speed:1000}" >
     <ion-slide >
       <img src="assets/images/final-de-la-jornada.jpg"/>
@@ -47,32 +47,32 @@
     </ion-col>
   </ion-row> -->
 
-  <ion-list class="listaBotones">
-    <button ion-button full icon-right class="boton">
-      <ion-icon name="home"></ion-icon>
-      Ofertas
-    </button>
-    <button ion-button full icon-right class="boton">
-      <ion-icon name="cart"></ion-icon>
-      Pedidos
-    </button>
-    <button ion-button full icon-right class="boton">
-      <ion-icon name="pin"></ion-icon>
-      Mi Lista
-    </button>
-    <button ion-button full icon-right class="boton">
-      <ion-icon name="map"></ion-icon>
-      Folleto
-    </button>
-  </ion-list>
-
-  <ion-card class="padding" style="border:2px; padding: 0 8px;">
-    <ion-card-content>
-      <h6 style="text-align: center;">Sucursales</h6>
-      <img src="assets/images/map.jpg"/>
-
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button full icon-left item-left (click)="openOffers()">
+          <ion-icon name="pricetag"></ion-icon>Ofertas
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full icon-left item-right (click)="openMagazines()">
+          <ion-icon name="images"></ion-icon>Folletos
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button full icon-left item-left (click)="openOrders()">
+          <ion-icon name="cart"></ion-icon>Mis pedidos
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full icon-left item-right (click)="openStore()">
+          <ion-icon name="pin"></ion-icon>Sucursales
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-card class="padding" style="border:2px; padding: 0 8px;">
     <ion-card-content>
