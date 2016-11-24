@@ -26,10 +26,26 @@
         </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  <ion-fab left bottom>
+    <button ion-fab>
+      <ion-icon name="share"></ion-icon>
+    </button>
+    <ion-fab-list side="right">
+      <button ion-fab color="primary" (click)="whatsappShare()">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </button>
+      <button ion-fab color="primary" (click)="twitterShare()">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </button>
+      <button ion-fab color="primary" (click)="facebookShare()">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="add()">
       <ion-icon name="add"></ion-icon>
-      </button>
+    </button>
   </ion-fab>
 
 </ion-content>

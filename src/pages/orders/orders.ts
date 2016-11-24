@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
+import { SocialSharing } from 'ionic-native';
+
 import { AddOrderPage } from './add-order/add-order';
 import { OrderService } from '../../services/order.service';
 import { ToastService } from '../../services/toast.service';
@@ -57,6 +59,24 @@ export class OrdersPage {
       () => console.log('OrdersPage => done() finished.')
     );
     return orders;  
+  }
+
+  whatsappShare(){
+    SocialSharing.shareViaWhatsApp("Message via WhatsApp", null /*Image*/,  "http://pointdeveloper.com/")
+      .then(() => this.toast.success("Success"))
+      .catch(() => this.toast.error("Error"));
+  }
+ 
+  twitterShare(){
+    SocialSharing.shareViaTwitter("Message via Twitter",null /*Image*/,"http://pointdeveloper.com")
+      .then(() => this.toast.success("Success"))
+      .catch(() => this.toast.error("Error"));
+  }
+ 
+  facebookShare(){
+    SocialSharing.shareViaFacebook("Message via Twitter",null /*Image*/,"http://pointdeveloper.com")
+      .then(() => this.toast.success("Success"))
+      .catch(() => this.toast.error("Error"));
   }
 
 }
