@@ -4,24 +4,28 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
+      Ofertas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-bg content-ios statusbar-padding">
-  <h4 style="text-align: center;">Ofertas</h4>
-    <ion-item *ngFor= "let item of items" text-wrap height-50>
-      <ion-card class="padding" style="border:2px; padding: 0 8px;">
-        <ion-card-content>
-          <h5>{{item.description}}</h5>
-          <img [src]="item.image"/>
-          <p>
-            {{item.description}}
-          <p>
-          <p class="precio">${{item.price}}</p>
-        </ion-card-content>
-      </ion-card>
-    </ion-item>
+<ion-content>
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col width-50 *ngFor= "let item of items; let i = index;">
+        <ion-card> 
+          <img [src]="item.image" width="100%"/>
+          <ion-card-content>
+            <p class="truncate">{{item.description}}</p>
+          </ion-card-content>
+          <ion-item>
+            {{item?.price | currency:'ARS'}}
+            <ion-icon name='cart' color="danger" item-right></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
    <ion-infinite-scroll-content>

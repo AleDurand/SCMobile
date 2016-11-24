@@ -1,10 +1,10 @@
 page-offers {
-}
 
-.precio{
-  text-align: right;
-}
-
-h4{
-  text-align: center;
+  .truncate {
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis ellipsis;
+  }
+  
 }

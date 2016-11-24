@@ -12,7 +12,7 @@
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
+  primary:    #2A5B7B,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -41,9 +41,12 @@ $text-input-highlight-color-invalid:       color($colors, error);
 // iOS only Sass variables can go here
 
 // Toolbar
-$toolbar-ios-background:                   color($colors, dark);
-$toolbar-ios-active-color:                 color($colors, dark);
+$toolbar-ios-background:                   color($colors, primary);
+$toolbar-ios-active-color:                 color($colors, primary);
 $toolbar-ios-inactive-color:               color($colors, light);
+
+// Menu
+$menu-ios-background:                      color($colors, primary);
 
 // Tabs
 $tabs-ios-background:                      color($colors, dark);
@@ -68,9 +71,12 @@ $segment-button-ios-text-color-activated:  color($colors, dark);
 // Material Design only Sass variables can go here
 
 // Toolbar
-$toolbar-md-background:                   color($colors, dark);
-$toolbar-md-active-color:                 color($colors, dark);
+$toolbar-md-background:                   color($colors, primary);
+$toolbar-md-active-color:                 color($colors, primary);
 $toolbar-md-inactive-color:               color($colors, light);
+
+// Menu
+$menu-md-background:                      color($colors, primary);
 
 // Tabs
 $tabs-md-background:                      color($colors, dark);
@@ -96,9 +102,12 @@ $segment-button-md-text-color-activated:  color($colors, dark);
 // Windows only Sass variables can go here
 
 // Toolbar
-$toolbar-wp-background:                   color($colors, dark);
-$toolbar-wp-active-color:                 color($colors, dark);
+$toolbar-wp-background:                   color($colors, primary);
+$toolbar-wp-active-color:                 color($colors, primary);
 $toolbar-wp-inactive-color:               color($colors, light);
+
+// Menu
+$menu-wp-background:                      color($colors, primary);
 
 // Tabs
 $tabs-wp-background:                      color($colors, dark);

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-import { OfferDetailsPage } from './offer-details/offer-details';
 import { OfferService } from '../../services/offer.service';
 import { ToastService } from '../../services/toast.service';
 
@@ -14,13 +13,13 @@ import { ToastService } from '../../services/toast.service';
 export class OffersPage {
 
   public offers;
-  items = [];
+  public items = [];
   public ig = 0;
+
   constructor(public navCtrl: NavController, private toast: ToastService, private offerService: OfferService) {    
     for ( this.ig ; this.ig < 10; this.ig++) {
       this.items.push(this.offerService.getOfer(this.ig));
     }
-
   }
 
   // ngOnInit(){
@@ -36,15 +35,10 @@ export class OffersPage {
   //   );
   // }
 
-  getById(id) {
-    this.navCtrl.push(OfferDetailsPage, { id: id });
-  }    
-
   doInfinite(infiniteScroll) {
     console.log('Begin async operation');
 
-    setTimeout(() => {
-      
+    setTimeout(() => {      
       var fin = this.ig + 10;
       for (this.ig; this.ig < fin ; this.ig++) {
         this.items.push( this.offerService.getOfer(this.ig));
@@ -54,4 +48,5 @@ export class OffersPage {
       infiniteScroll.complete();
     }, 500);
   }
+
 }

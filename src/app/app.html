@@ -7,10 +7,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="outer-content">
-    <ion-list>
-      <ion-list-header>Navegar</ion-list-header>
-      <ion-item class="button" menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+  <ion-content class="outer-content menu-background">
+    <ion-list class="menu-item">
+      <ion-list-header class="menu-item">Navegar</ion-list-header>
+      <ion-item class="button menu-item" menuClose *ngFor="let p of appPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon"></ion-icon>
           {{p.title}}
       </ion-item>

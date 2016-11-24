@@ -3,7 +3,6 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { OffersPage } from '../pages/offers/offers';
-import { OfferDetailsPage } from '../pages/offers/offer-details/offer-details';
 import { MagazinesPage } from '../pages/magazines/magazines';
 import { OrdersPage } from '../pages/orders/orders';
 import { AddOrderPage } from '../pages/orders/add-order/add-order';
@@ -19,7 +18,6 @@ import { SearchPipe } from '../pipes/search.pipe';
   declarations: [
     MyApp,
     OffersPage,
-    OfferDetailsPage,
     ContactPage,
     HomePage,
     MagazinesPage,
@@ -37,7 +35,6 @@ import { SearchPipe } from '../pipes/search.pipe';
   entryComponents: [
     MyApp,
     OffersPage,
-    OfferDetailsPage,
     ContactPage,
     HomePage,
     MagazinesPage,
