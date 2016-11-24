@@ -20,19 +20,19 @@ export class HomePage {
   }
 
   openOffers(){
-    this.navCtrl.push(OffersPage);
+    this.navCtrl.setRoot(OffersPage, {}, { animate: true, direction: 'forward' });
   }
 
   openMagazines(){
-    this.navCtrl.push(MagazinesPage); 
+    this.navCtrl.setRoot(MagazinesPage, {}, { animate: true, direction: 'forward' });
   }
 
   openOrders(){
-    this.navCtrl.push(OrdersPage);
+    this.navCtrl.setRoot(OrdersPage, {}, { animate: true, direction: 'forward' });
   }
 
   openStore(){
-    this.navCtrl.push(StoresPage);
+    this.navCtrl.setRoot(StoresPage, {}, { animate: true, direction: 'forward' });
   }
 
 }
