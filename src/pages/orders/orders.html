@@ -10,13 +10,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="filter"></ion-searchbar>
   <ion-list>
-    <ion-item-sliding *ngFor="let product of products; let i = index; ">
+    <ion-item-sliding *ngFor="let order of orders | search:'name':filter; let i = index; ">
         <ion-item>
-            <ion-checkbox [(ngModel)]="product.done" (click)="done(i, !product.done)"></ion-checkbox>
-            <ion-label>{{product.name}}</ion-label>
-            <ion-badge item-right>{{product.amount}}</ion-badge>
+            <ion-checkbox [(ngModel)]="order.done" (click)="done(i, !order.done)"></ion-checkbox>
+            <ion-label>{{order.name}}</ion-label>
+            <ion-badge item-right>{{order.amount}}</ion-badge>
         </ion-item>
         <ion-item-options>
             <button ion-button color="danger" (click)="delete(i)">

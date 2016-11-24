@@ -13,6 +13,7 @@ import { StoresPage } from '../pages/stores/stores';
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Configuration } from './app.constants';
+import { SearchPipe } from '../pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { Configuration } from './app.constants';
     AddOrderPage,
     StoresPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    SearchPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp, { tabsPlacement: 'bottom' }), HttpModule

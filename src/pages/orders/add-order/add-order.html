@@ -7,7 +7,7 @@
       Nuevo item
     </ion-title>
     <ion-buttons end>
-        <button ion-button [disabled]="!productForm.valid" (click)="save(productForm.value)">
+        <button ion-button [disabled]="!orderForm.valid" (click)="save(orderForm.value)">
             <ion-icon name="checkmark"></ion-icon>
         </button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 </ion-header>
  
 <ion-content class="add">
-    <form [formGroup]="productForm">
+    <form [formGroup]="orderForm">
         <ion-item>
             <ion-label floating>Nombre</ion-label>
             <ion-input type="text" formControlName="name"></ion-input>

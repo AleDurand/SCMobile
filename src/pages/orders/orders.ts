@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { AddOrderPage } from './add-order/add-order';
+import { OrderService } from '../../services/order.service';
+import { ToastService } from '../../services/toast.service';
 
-export interface Product {
+export interface Order {
   name: string;
   amount: number;
   done: boolean;
@@ -12,21 +14,20 @@ export interface Product {
 
 @Component({
   selector: 'page-orders',
-  templateUrl: 'orders.html'
+  templateUrl: 'orders.html',
+  providers: [ ToastService, OrderService ]
 })
 export class OrdersPage {
 
-  public products: Array<Product>;
+  public orders: Array<Order>;
+  public filter: string = '';
 
-  constructor(public navCtrl: NavController) {
-    this.products = JSON.parse(localStorage.getItem("products"));
-    if(!this.products) {
-      this.products = [];
-    }
+  constructor(public navCtrl: NavController, private toast: ToastService, private orderService: OrderService) {
+    
   }
 
   ionViewWillEnter(){
-    this.products = JSON.parse(localStorage.getItem("products"));
+    this.orders = this.getAll();
   }
 
   add(){
@@ -34,30 +35,28 @@ export class OrdersPage {
   }
 
   done(index: number, done: boolean){
-    this.products[index].done = done;
-    localStorage.setItem("products", JSON.stringify(this.products));
+    this.orders[index].done = done;
+    this.orderService.update(index, this.orders[index]); 
+    this.orders = this.getAll();
   }
 
   delete(index: number) {
-    this.products.splice(index, 1);
-    localStorage.setItem("products", JSON.stringify(this.products));
+    this.orderService.delete(index);
   }
 
-  filter(event: any) {
-    // Reset items back to all of the items
-    this.products = JSON.parse(localStorage.getItem("products"));
-
-    // set val to the value of the searchbar
-    let val = event.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.products = this.products.filter((item) => {
-        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
+  getAll() : any[] {
+    var orders = [];
+    this.orderService.getAll().subscribe(
+      data => {
+        orders = data;
+      },
+      err => {
+        if(err.status === 0) this.toast.error('Error al comunicarse con el server.');
+        else this.toast.error(err.json().message);
+      },
+      () => console.log('OrdersPage => done() finished.')
+    );
+    return orders;  
   }
-
-
 
 }
