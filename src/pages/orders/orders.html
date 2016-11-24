@@ -7,10 +7,10 @@
       Mis pedidos
     </ion-title>
   </ion-navbar>
+  <ion-searchbar [(ngModel)]="filter"></ion-searchbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="filter"></ion-searchbar>
   <ion-list>
     <ion-item-sliding *ngFor="let order of orders | search:'name':filter; let i = index; ">
         <ion-item>
