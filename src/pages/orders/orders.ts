@@ -15,7 +15,7 @@ export interface Order {
 @Component({
   selector: 'page-orders',
   templateUrl: 'orders.html',
-  providers: [ ToastService, OrderService ]
+  providers: [ OrderService ]
 })
 export class OrdersPage {
 
