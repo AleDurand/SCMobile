@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, FabContainer } from 'ionic-angular';
 import { SocialSharing } from 'ionic-native';
 
 import { AddOrderPage } from './add-order/add-order';
@@ -59,20 +59,9 @@ export class OrdersPage {
     return orders;  
   }
 
-  whatsappShare(){
-    SocialSharing.shareViaWhatsApp("Message via WhatsApp", null /*Image*/,  "http://pointdeveloper.com/")
-      .then(() => this.toast.success("Success"))
-      .catch(() => this.toast.error("Error"));
-  }
- 
-  twitterShare(){
-    SocialSharing.shareViaTwitter("Message via Twitter",null /*Image*/,"http://pointdeveloper.com")
-      .then(() => this.toast.success("Success"))
-      .catch(() => this.toast.error("Error"));
-  }
- 
-  facebookShare(){
-    SocialSharing.shareViaFacebook("Message via Twitter",null /*Image*/,"http://pointdeveloper.com")
+  shareVia(appName: string, fab : FabContainer){
+    fab.close();
+    SocialSharing.shareVia(appName, this.orders.toString(), null, null, null)
       .then(() => this.toast.success("Success"))
       .catch(() => this.toast.error("Error"));
   }

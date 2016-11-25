@@ -8,8 +8,7 @@ declare var google : any;
 
 @Component({
   selector: 'page-stores',
-  templateUrl: 'stores.html',
-  providers: [ToastService]
+  templateUrl: 'stores.html'
 })
 export class StoresPage {
 

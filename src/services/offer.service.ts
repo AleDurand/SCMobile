@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { Http } from '@angular/http';
 
 import { Configuration } from '../app/app.constants';
 import { SafeHttp } from './safe-http.service';
@@ -10,7 +9,7 @@ export class OfferService {
 
     private actionUrl: string;
 
-    constructor(private http: Http, private configuration: Configuration) {
+    constructor(private http: SafeHttp, private configuration: Configuration) {
          this.actionUrl = configuration.ServerWithApiUrl + '/offers/';
     }
 

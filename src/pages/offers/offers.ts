@@ -7,7 +7,7 @@ import { ToastService } from '../../services/toast.service';
 @Component({
   selector: 'page-offers',
   templateUrl: 'offers.html',
-  providers: [OfferService, ToastService]
+  providers: [OfferService]
 })
 export class OffersPage {
 
