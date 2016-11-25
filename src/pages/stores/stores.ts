@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { NavController, LoadingController } from 'ionic-angular';
-
 import { Geolocation } from 'ionic-native';
 
 import { ToastService } from '../../services/toast.service';

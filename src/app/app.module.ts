@@ -13,6 +13,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Configuration } from './app.constants';
 import { SearchPipe } from '../pipes/search.pipe';
+import { NetworkService } from '../services/network.service';
+import { SafeHttp } from '../services/safe-http.service';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,6 @@ import { SearchPipe } from '../pipes/search.pipe';
     SettingsPage,
     TabsPage
   ],
-  providers: [Configuration]
+  providers: [Configuration, NetworkService, SafeHttp]
 })
 export class AppModule {}

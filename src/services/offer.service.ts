@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import { Http } from '@angular/http';
+
 import { Configuration } from '../app/app.constants';
+import { SafeHttp } from './safe-http.service';
 
 @Injectable()
 export class OfferService {

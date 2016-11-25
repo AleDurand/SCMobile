@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
-
 //import { Slides } from 'ionic-angular';
 
 import { OffersPage } from '../offers/offers';

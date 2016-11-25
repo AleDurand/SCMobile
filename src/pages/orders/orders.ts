@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
-
 import { SocialSharing } from 'ionic-native';
 
 import { AddOrderPage } from './add-order/add-order';

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
 import { Configuration } from '../app/app.constants';
+import { SafeHttp } from './safe-http.service';
 
 @Injectable()
 export class OrderService {
@@ -9,7 +10,7 @@ export class OrderService {
     private actionUrl: string;
     private orders;
 
-    constructor(private http: Http, private configuration: Configuration) {
+    constructor(private http: SafeHttp, private configuration: Configuration) {
          this.actionUrl = configuration.ServerWithApiUrl + '/orders/';
          this.orders = JSON.parse(localStorage.getItem("orders"));
          if(this.orders === null){
