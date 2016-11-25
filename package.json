@@ -34,7 +34,15 @@
     "@ionic/app-scripts": "0.0.44",
     "typescript": "2.0.6"
   },
-  "cordovaPlugins": [],
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-geolocation"
+  ],
   "cordovaPlatforms": [],
   "description": "SCMobile: An Ionic project"
 }
