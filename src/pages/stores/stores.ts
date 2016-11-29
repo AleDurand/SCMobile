@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
-import { Geolocation, GoogleMap, GoogleMapsLatLng, GoogleMapsMarkerOptions } from 'ionic-native';
+import { NavController, Platform, LoadingController, MenuController } from 'ionic-angular';
+import { Geolocation, GoogleMap, GoogleMapsLatLng, GoogleMapsMarkerOptions, GoogleMapsEvent } from 'ionic-native';
 
 import { ToastService } from '../../services/toast.service';
 
@@ -14,11 +14,13 @@ export class StoresPage {
 
   private map : GoogleMap;
 
-  constructor(public navCtrl: NavController, private toast: ToastService, public loadingCtrl: LoadingController) {
-
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public platform: Platform, private toast: ToastService, public loadingCtrl: LoadingController) {
+    platform.ready().then(() => {
+      this.loadMap();
+    });
   }
-
-  ionViewDidLoad(){
+  
+  loadMap(){
     let loader = this.loadingCtrl.create({ content: "Loading..." });
     loader.present();
     Geolocation.getCurrentPosition().then(
@@ -32,8 +34,16 @@ export class StoresPage {
           'camera': { 'latLng': latLng, 'tilt': 30, 'zoom': 15, 'bearing': 50 }
         });
 
-        let marker : GoogleMapsMarkerOptions = { position: latLng, title: 'Me!' };        
-        this.map.addMarker(marker);
+        this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
+          this.menuCtrl.get().ionOpen.subscribe(() => {
+            this.map.setClickable(false);
+          });
+          this.menuCtrl.get().ionClose.subscribe(() => {
+            this.map.setClickable(true);
+          });
+          //let marker : GoogleMapsMarkerOptions = { position: latLng, title: 'Me!' };        
+          //this.map.addMarker(marker);
+        });
 
         loader.dismissAll();  
       }, 
