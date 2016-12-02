@@ -19,7 +19,7 @@
             <p class="truncate">{{item.description}}</p>
           </ion-card-content>
           <ion-item>
-            {{item?.price | currency:'ARS'}}
+            {{item?.price | currency:'ARS':true }}
             <ion-icon name='cart' color="danger" item-right></ion-icon>
           </ion-item>
         </ion-card>

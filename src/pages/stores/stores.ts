@@ -49,7 +49,7 @@ export class StoresPage {
       }, 
       (err) => {
         loader.dismissAll();  
-        this.toast.error(err.json().message);
+        this.toast.error(err.message);
       }
     ).catch((error) => {
       loader.dismissAll();  

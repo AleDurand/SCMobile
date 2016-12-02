@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <img src="assets/images/logo-col.png" />
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person"></ion-icon>
+        Numero de documento
+      </ion-label>
+      <ion-input [formControl]="username" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="unlock"></ion-icon>
+        Numero de asociado
+      </ion-label>
+      <ion-input [formControl]="password" type="password"></ion-input>
+    </ion-item>
+    <ion-item [hidden]="!errorMessage"><label>{{errorMessage}}</label></ion-item>
+    <button ion-button full primary (click)="login()" [disabled]="!loginForm.valid">Enviar</button>
+  </form>
+  
+</ion-content>

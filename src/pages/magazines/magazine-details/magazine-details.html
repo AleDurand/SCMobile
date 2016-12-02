@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Pagina {{getActiveIndex()}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #magazineSlider (ionDidChange)="onSlideChanged()" [options]="sliderOptions" *ngIf="images.length">
+    <ion-slide *ngFor="let image of images" >
+      <img [src]="image.path" width="100%" />
+    </ion-slide>
+  </ion-slides>
+</ion-content>

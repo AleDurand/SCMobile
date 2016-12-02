@@ -8,77 +8,33 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-card class="my-card">
-    <img src="assets/images/final-de-la-jornada.jpg"/>
-  </ion-card>
-  <!-- <ion-slides style="height: 40%;" [options]="{ autoplay:5000, loop:true , direction:'horizontal', speed:1000}" >
-    <ion-slide >
-      <img src="assets/images/final-de-la-jornada.jpg"/>
-    </ion-slide >
-    <ion-slide >
-      <img src="assets/images/zapala1.jpg"/>
-    </ion-slide>
-     <ion-slide >
-      <img src="assets/images/logo-col.resized.jpg"/>
-    </ion-slide>
-  </ion-slides> -->
-
-  <!-- <ion-row style="">
-    <ion-col width-50>
-      <button ion-button full icon-left>
-        <ion-icon name="home"></ion-icon>
-        Ofertas
-      </button>
-      <button ion-button full icon-left>
-        <ion-icon name="cart"></ion-icon>
-        Pedidos
-      </button>  
-    </ion-col>
-    <ion-col width-50>
-      <button ion-button full icon-right>
-        Sucursales
-        <ion-icon name="pin"></ion-icon>
-      </button>  
-      <button ion-button full icon-right>
-        Folletos
-        <ion-icon name="map"></ion-icon>
-      </button>
-    </ion-col>
-  </ion-row> -->
-
+  <div>
+    <img src="assets/images/logo-col.png" />
+  </div>
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <button ion-button full icon-left item-left (click)="openOffers()">
+      <ion-col width-50>
+        <button ion-button full round icon-left item-left (click)="openOffers()">
           <ion-icon name="pricetag"></ion-icon>Ofertas
         </button>
       </ion-col>
-      <ion-col>
-        <button ion-button full icon-left item-right (click)="openMagazines()">
+      <ion-col width-50>
+        <button ion-button full round icon-left item-right (click)="openMagazines()">
           <ion-icon name="images"></ion-icon>Folletos
         </button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <button ion-button full icon-left item-left (click)="openOrders()">
+      <ion-col width-50>
+        <button ion-button full round icon-left item-left (click)="openOrders()">
           <ion-icon name="cart"></ion-icon>Mis pedidos
         </button>
       </ion-col>
-      <ion-col>
-        <button ion-button full icon-left item-right (click)="openStore()">
+      <ion-col width-50>
+        <button ion-button full round icon-left item-right (click)="openStore()">
           <ion-icon name="pin"></ion-icon>Sucursales
         </button>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-  <ion-card class="padding" style="border:2px; padding: 0 8px;">
-    <ion-card-content>
-      <h6 style="text-align: center;">Descuentazo</h6>
-      <img src="assets/images/descuentazo.jpg"/>
-    </ion-card-content>
-  </ion-card>
-
+  </ion-grid>  
 </ion-content>

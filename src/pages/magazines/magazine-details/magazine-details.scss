@@ -1,0 +1,17 @@
+page-magazine-details {
+
+  .swiper-slide {
+    overflow-y: scroll;
+    display: block;
+  }
+
+  img {
+    margin-top: 5px;
+    border: 5px solid color($colors, dark);
+    padding: 8px;
+    background-color: color($colors, primary);
+    max-width: 98%;
+    max-height: 98%
+  }
+
+}

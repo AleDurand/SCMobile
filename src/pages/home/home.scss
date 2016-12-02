@@ -1,36 +1,41 @@
 page-home {
-  .slide-zoom {
-    height: 100%;
-  }
-
-  .slide-title {
-    margin-top: 2.8rem;
-  }
-
-  .slide-image {
-    max-height: 70%;
-    max-width: 80%;
-    margin: 18px 0;
-  }
-
-  b {
-    font-weight: 500;
-  }
-
-  p {
-    padding: 0 40px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #60646B;
-
-    b {
-      color: #000000;
-    }
-  }
-
-  .my-card {
-    margin: 0px;
-    width: 100%;
-  }
   
+  .content-ios {
+    background: url('../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content-md {
+    background: url('../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content-wp {
+    background: url('../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .button {
+    font-size: 1.8rem;
+    font-weight: 600;
+    height: 5.6rem;
+  }
+
+  img {
+    width: auto;
+    margin: auto;
+    display: block;
+  }
+   
+  ion-grid {
+    bottom: 0px;
+    position: absolute;
+  }
+
 }
