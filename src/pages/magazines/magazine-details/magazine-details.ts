@@ -25,7 +25,7 @@ export class MagazineDetailsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public toast: ToastService, public magazineService: MagazineService) {
     this.images = navParams.get('images');
     this.selected = navParams.get('selected');    
-    this.sliderOptions = { initialSlide: this.selected, loop: false, pager: true };
+    this.sliderOptions = { initialSlide: this.selected, loop: false, pager: true, onSliderMove: (event: any) => this.allowedToSlide(event) };
   }
 
   onSlideChanged(){
@@ -44,5 +44,18 @@ export class MagazineDetailsPage {
     }
     
   }
+
+  private allowedToSlide(swiper) {
+    let slideIndex = this.slider.getActiveIndex();
+    let slide = swiper.slides[slideIndex];
+
+    let isZoomed = (slide.getAttribute('zoomed') !== 'false');
+
+    if (isZoomed) {
+        swiper.lockSwipes();
+    } else {
+        swiper.unlockSwipes();
+    }
+}
 
 }

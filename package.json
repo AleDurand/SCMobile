@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "0.0.44",
+    "hammerjs": "^2.0.8",
     "typescript": "2.0.6"
   },
   "cordovaPlugins": [
@@ -42,7 +43,22 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
     "cordova-plugin-geolocation",
-    "cordova-sqlite-storage"
+    "cordova-sqlite-storage",
+    {
+      "id": "cordova-plugin-googlemaps",
+      "locator": "cordova-plugin-googlemaps",
+      "variables": {
+        "API_KEY_FOR_ANDROID": "AIzaSyA0GMMzLvXSnasRXvgVu4tBtyC0NEajyO4",
+        "API_KEY_FOR_IOS": "AIzaSyA0GMMzLvXSnasRXvgVu4tBtyC0NEajyO4"
+      }
+    },
+    {
+      "id": "phonegap-plugin-push",
+      "locator": "phonegap-plugin-push",
+      "variables": {
+        "SENDER_ID": "1031748853944"
+      }
+    }
   ],
   "cordovaPlatforms": [],
   "description": "SCMobile: An Ionic project"

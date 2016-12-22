@@ -11,7 +11,7 @@
 
 <ion-content padding>
   <ion-slides #magazineSlider (ionDidChange)="onSlideChanged()" [options]="sliderOptions" *ngIf="images.length">
-    <ion-slide *ngFor="let image of images" >
+    <ion-slide *ngFor="let image of images" zoom>
       <img [src]="image.path" width="100%" />
     </ion-slide>
   </ion-slides>

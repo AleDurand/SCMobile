@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, Events, MenuController, LoadingController } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { AlertController, Nav, Platform, Events, MenuController, LoadingController } from 'ionic-angular';
+import { StatusBar, Splashscreen, Push } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 import { OffersPage } from '../pages/offers/offers';
@@ -46,10 +46,11 @@ export class MyApp {
     { title: 'Login', component: LoginPage, icon: 'log-in' },
   ];
 
-  constructor(platform: Platform, public events: Events, public menu: MenuController, public userService: UserService, public loadingCtrl: LoadingController) {
+  constructor(public platform: Platform, private alertCtrl: AlertController, public events: Events, public menu: MenuController, public userService: UserService, public loadingCtrl: LoadingController) {
     platform.ready().then(() => {
       StatusBar.styleDefault();
       Splashscreen.hide();
+      this.initPush();
     });
     userService.isLoggedIn().then(
       (loggedIn) => this.enableMenu(loggedIn)
@@ -84,6 +85,36 @@ export class MyApp {
   enableMenu(loggedIn){
     this.menu.enable(loggedIn, 'loggedInMenu');
     this.menu.enable(!loggedIn, 'loggedOutMenu');
+  }
+
+  initPush() {
+    let push = Push.init({
+      android: { senderID: "1031748853944" },
+      ios: { alert: "true", badge: false, sound: "true" },
+      windows: {}
+    });
+
+    if(this.platform.is('cordova')){
+      push.on('registration', (data) => {
+        console.log("device token ->", data.registrationId);
+        let alert = this.alertCtrl.create({
+          title: 'Registration id',
+          subTitle: data.registrationId ,
+          buttons: ['Dismiss']
+        });
+        alert.present();
+      });
+
+      push.on('notification', (data) => {
+        console.log('message', data.message);
+        this.nav.push(HomePage);
+      });
+    
+      push.on('error', (e) => {
+        console.log(e.message);
+      });
+    }  
+
   }
 
 }

@@ -19,6 +19,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Configuration } from './app.constants';
 
 import { SearchPipe } from '../pipes/search.pipe';
+import { ZoomDirective } from '../components/zoom/zoom';
 
 import { UserService } from '../services/user.service';
 import { ToastService } from '../services/toast.service';
@@ -40,7 +41,8 @@ import { SafeHttp } from '../services/safe-http.service';
     LoginPage,
     SettingsPage,
     TabsPage,
-    SearchPipe
+    SearchPipe,
+    ZoomDirective
   ],
   imports: [
     IonicModule.forRoot(MyApp, { tabsPlacement: 'bottom' }), HttpModule
